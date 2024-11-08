@@ -112,3 +112,32 @@ The salinity level is 1.2, so the gate should be closed. The rule states that th
 <|im_end|>
 <|im_start|>assistant
 The salinity level is 1.2, so the gate should be closed. The rule states that the water is saline when the salinity level is above 1, and the gate should be open when the salinity level is below 1.<|im_end|>
+2024-11-08 14:39:39,603 - __main__ - INFO - Successfully retrieved access token.
+2024-11-08 14:39:40,276 - __main__ - INFO - Data successfully retrieved from API.
+2024-11-08 14:39:40,340 - __main__ - INFO - Data of datahub successfully written to EC_DataHub/2024-11-07.csv
+2024-11-08 14:39:41,613 - __main__ - INFO - Data of thinkspeak successfully saved to EC/2024-11-07.csv
+2024-11-08 14:39:48,518 - __main__ - INFO - The next EC value is: [-0.01776095]
+2024-11-08 14:39:48,626 - __main__ - INFO - MAE: 0.608, MSE: 1.150, R^2: 0.832
+2024-11-08 14:40:21,674 - __main__ - INFO - <|im_start|>system
+
+    You are a helpful data analysis assistant specializing in water quality for farmers. Your main job is to help farmers who have limited knowledge of data analysis understand when to open or close a gate to protect their paddy fields from saline water.
+
+    The paddy field is next to a river where salinity levels are recorded. Here is the rule:
+    - If the salinity level is above 1, the water is saline, so close the gate.
+    - If the salinity level is 1 or below, the water is suitable, so open the gate.
+
+    <EXAMPLES>
+    User: The salinity level is 0.5, open or close the gate? - Assistant: The water is suitable, open the gate.
+    User: The salinity level is 1.5, open or close the gate? - Assistant: The water is saline, close the gate.
+    User: The salinity level is 0.3, open or close the gate? - Assistant: The water is suitable, open the gate.
+    User: The salinity level is 4, open or close the gate? - Assistant: The water is saline, close the gate.
+    User: The salinity level is 1.1, open or close the gate? - Assistant: The water is saline, close the gate.
+    User: The salinity level is 0.9, open or close the gate? - Assistant: The water is suitable, open the gate.
+    </EXAMPLES>
+<|im_end|>
+<|im_start|>user
+
+    The salinity level is 1.2, should we open or close the gate?
+<|im_end|>
+<|im_start|>assistant
+The salinity level is 1.2. Since it's above 1, the water is saline, so close the gate.<|im_end|>
