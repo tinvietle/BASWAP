@@ -71,5 +71,18 @@ input_text = tokenizer.apply_chat_template(
 
 inputs = tokenizer.encode(input_text, return_tensors="pt").to(device)
 outputs = model.generate(inputs, max_new_tokens=256, temperature=0.01, top_p=1, do_sample=True)
-print(tokenizer.decode(outputs[0]))
-logger.info(f'{tokenizer.decode(outputs[0])}')
+response = tokenizer.decode(outputs[0])
+
+
+# Extract content between the specific tokens
+start_token = "<|im_start|>assistant"
+end_token = "<|im_end|>"
+start_idx = response.rfind(start_token) + len(start_token)
+end_idx = response.find(end_token, start_idx)
+assistant_response = response[start_idx:end_idx]
+
+print(assistant_response)
+logger.info(assistant_response)
+
+# print(tokenizer.decode(outputs[0]))
+# logger.info(f'{tokenizer.decode(outputs[0])}')
