@@ -185,5 +185,5 @@ axes[2, 2].axis('off')
 
 
 # Adjust layout
-# plt.tight_layout(rect=[0, 0, 1, 0.96])
-# plt.show()
+plt.tight_layout(rect=[0, 0, 1, 0.96])
+plt.show()
