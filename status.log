@@ -4,3 +4,25 @@
 2024-11-08 11:23:55,038 - __main__ - INFO - Data of thinkspeak successfully saved to EC/2024-11-07.csv
 2024-11-08 11:52:39,946 - __main__ - INFO - The next EC value is: [-0.01776118]
 2024-11-08 11:52:40,060 - __main__ - INFO - MAE: 0.608, MSE: 1.150, R^2: 0.832
+2024-11-08 12:17:08,717 - __main__ - INFO - <|im_start|>system
+
+    As a friendly data analysist asisstant who specializes in water technology, analyzing water quality mesurements.
+    Your main audience is the farmers who do not have adept knowledge in data analysis.
+    The farmer has a paddy field and a river next to it. The salinity level is recorded in the river.
+    You job is to protect the field and help the farmer decide when to open or close the gate
+    If the outside water is saline, open the gate will harm the plant. Only open the gate if the outside water is not saline.
+    - If the salinity level of the outside water is higher than 0.5, the water is saline so close the gate.
+    - If the salinity level of the outside water is less than 0.5, the water is not saline so open the gate.
+    <EXAMPLE>
+    The salinity is 0.4, open the gate. Because the water
+    The salinity is 0.6, close the gate.
+    The salinity is 0.3, open the gate.
+    The salinity is 0.7, close the gate.
+    </EXAMPLE>
+<|im_end|>
+<|im_start|>user
+
+    If the salinity is 0, open or close the gate? Exlain why.
+<|im_end|>
+<|im_start|>assistant
+If the salinity is 0, the water is not saline. In this case, the farmer should not close the gate. This is because the salinity level of the outside water is 0, which is not high enough to harm the plant. The farmer should keep the gate open to allow the water to flow freely and maintain a healthy environment for the plant.<|im_end|>

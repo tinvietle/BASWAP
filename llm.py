@@ -1,4 +1,26 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
+import logging
+import logging.handlers
+import requests
+import json
+import csv
+import os
+import pytz
+from datetime import date, timedelta, datetime
+
+# Set up logging
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger_file_handler = logging.handlers.RotatingFileHandler(
+    "status.log",
+    maxBytes=1024 * 1024,
+    backupCount=1,
+    encoding="utf8",
+)
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+logger_file_handler.setFormatter(formatter)
+logger.addHandler(logger_file_handler)
+
 checkpoint = "HuggingFaceTB/SmolLM2-360M-Instruct"
 
 device = "cpu" # for GPU usage or "cpu" for CPU usage
@@ -49,3 +71,4 @@ input_text = tokenizer.apply_chat_template(
 inputs = tokenizer.encode(input_text, return_tensors="pt").to(device)
 outputs = model.generate(inputs, max_new_tokens=256, temperature=0.01, top_p=1, do_sample=True)
 print(tokenizer.decode(outputs[0]))
+logger.info(f'{tokenizer.decode(outputs[0])}')
