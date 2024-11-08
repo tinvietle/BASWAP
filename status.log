@@ -1,0 +1,4 @@
+2024-11-08 11:18:54,496 - __main__ - INFO - Successfully retrieved access token.
+2024-11-08 11:18:55,410 - __main__ - INFO - Data successfully retrieved from API.
+2024-11-08 11:18:55,457 - __main__ - INFO - Data of datahub successfully written to EC_DataHub/2024-11-07.csv
+2024-11-08 11:23:55,038 - __main__ - INFO - Data of thinkspeak successfully saved to EC/2024-11-07.csv

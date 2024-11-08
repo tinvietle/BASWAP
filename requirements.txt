@@ -1,0 +1,11 @@
+huggingface-hub==0.26.2
+numpy==1.26.4
+pandas==2.2.3
+scikit-learn==1.5.2
+scipy==1.11.2
+tensorboard==2.18.0
+tensorboard-data-server==0.7.1
+tensorflow==2.18.0
+matplotlib==3.7.2
+matplotlib-inline==0.1.6
+transformers==4.46.2
