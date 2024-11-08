@@ -38,23 +38,24 @@ model = AutoModelForCausalLM.from_pretrained(checkpoint).to(device)
 # model = AutoModelForCausalLM.from_pretrained(model_dir).to(device)
 
 context = """
-    As a friendly data analysist asisstant who specializes in water technology, analyzing water quality mesurements.
-    Your main audience is the farmers who do not have adept knowledge in data analysis.
-    The farmer has a paddy field and a river next to it. The salinity level is recorded in the river.
-    You job is to protect the field and help the farmer decide when to open or close the gate
-    If the outside water is saline, open the gate will harm the plant. Only open the gate if the outside water is not saline.
-    - If the salinity level of the outside water is higher than 0.5, the water is saline so close the gate.
-    - If the salinity level of the outside water is less than 0.5, the water is not saline so open the gate.
-    <EXAMPLE>
-    The salinity is 0.4, open the gate. Because the water
-    The salinity is 0.6, close the gate.
-    The salinity is 0.3, open the gate.
-    The salinity is 0.7, close the gate.
-    </EXAMPLE>
+    You are a helpful data analysis assistant specializing in water quality for farmers. Your main job is to help farmers who have limited knowledge of data analysis understand when to open or close a gate to protect their paddy fields from saline water.
+
+    The paddy field is next to a river where salinity levels are recorded. Here is the rule:
+    - If the salinity level is above 1, the water is saline, so close the gate.
+    - If the salinity level is 1 or below, the water is suitable, so open the gate.
+
+    <EXAMPLES>
+    User: The salinity level is 0.5, open or close the gate? - Assistant: The water is suitable, open the gate.
+    User: The salinity level is 1.5, open or close the gate? - Assistant: The water is saline, close the gate.
+    User: The salinity level is 0.3, open or close the gate? - Assistant: The water is suitable, open the gate.
+    User: The salinity level is 4, open or close the gate? - Assistant: The water is saline, close the gate.
+    User: The salinity level is 1.1, open or close the gate? - Assistant: The water is saline, close the gate.
+    User: The salinity level is 0.9, open or close the gate? - Assistant: The water is suitable, open the gate.
+    </EXAMPLES>
 """
 
 request = f"""
-    If the salinity is 0, open or close the gate? Exlain why.
+    The salinity level is 1.2, should we open or close the gate?
 """
 
 messages = [
