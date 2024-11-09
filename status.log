@@ -134,3 +134,11 @@ The salinity level is 1.2, so the gate should be closed. The rule states that th
 2024-11-08 23:35:24,677 - __main__ - INFO - MAE: 0.608, MSE: 1.150, R^2: 0.832
 2024-11-08 23:36:00,110 - __main__ - INFO - 
 The salinity level is 1.2, so the gate should be closed. The rule states that the water is saline when the salinity level is above 1, and the gate should be open when the salinity level is below 1.
+2024-11-09 03:23:47,497 - __main__ - INFO - Successfully retrieved access token.
+2024-11-09 03:23:48,302 - __main__ - INFO - Data successfully retrieved from API.
+2024-11-09 03:23:48,352 - __main__ - INFO - Data of datahub successfully written to EC_DataHub/2024-11-08.csv
+2024-11-09 03:23:49,326 - __main__ - INFO - Data of thinkspeak successfully saved to EC/2024-11-08.csv
+2024-11-09 03:23:54,836 - __main__ - INFO - The next EC value is: [-0.01776095]
+2024-11-09 03:23:54,942 - __main__ - INFO - MAE: 0.608, MSE: 1.150, R^2: 0.832
+2024-11-09 03:24:28,459 - __main__ - INFO - 
+The salinity level is 1.2, so the gate should be closed. The rule states that the water is saline when the salinity level is above 1, and the gate should be open when the salinity level is below 1.
