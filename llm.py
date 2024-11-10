@@ -23,8 +23,8 @@ logger_file_handler.setFormatter(formatter)
 logger.addHandler(logger_file_handler)
 
 try:
-    USERNAME_DATAHUB = os.environ["USERNAME"]
-    PASSWORD_DATAHUB = os.environ["PASSWORD"]
+    USERNAME_DATAHUB = os.environ["USERNAME_DATAHUB"]
+    PASSWORD_DATAHUB = os.environ["PASSWORD_DATAHUB"]
 except KeyError:
     logger.info("Environment variables not set!")
     #raise
