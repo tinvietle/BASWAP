@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import calendar
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 import keras
 from keras.models import Sequential
@@ -27,6 +26,7 @@ import json
 import csv
 import pytz
 from datetime import date, timedelta, datetime
+from datahub import sendMessage
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'    
 
 logger = logging.getLogger(__name__)
@@ -48,6 +48,13 @@ import warnings
 warnings.filterwarnings('ignore')
 np.random.seed(42)
 keras.utils.set_random_seed(812)
+
+try:
+    USERNAME = os.environ["USERNAME"]
+    PASSWORD = os.environ["PASSWORD"]
+except KeyError:
+    logger.info("Environment variables not set!")
+    #raise
 
 train_year = [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011]
 test_year = [2012, 2013, 2014]
@@ -159,6 +166,7 @@ y_pred = y_pred.reshape((len(y_pred), day_ahead))
 inv_y_pred, inv_y_gt = invert_scaling(y_pred, test_y)
 print("The next EC value is: ", inv_y_pred[-1:, 0])
 logger.info(f'The next EC value is: {inv_y_pred[-1:, 0]}')
+sendMessage(USERNAME, PASSWORD, "Predicted_EC_Value", inv_y_pred[-1:, 0][0])
 
 # Set up a 3x3 grid of subplots
 fig, axes = plt.subplots(3, 3, figsize=(12, 8))

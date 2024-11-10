@@ -7,6 +7,7 @@ import csv
 import os
 import pytz
 from datetime import date, timedelta, datetime
+from datahub import sendMessage
 
 # Set up logging
 logger = logging.getLogger(__name__)
@@ -20,6 +21,13 @@ logger_file_handler = logging.handlers.RotatingFileHandler(
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger_file_handler.setFormatter(formatter)
 logger.addHandler(logger_file_handler)
+
+try:
+    USERNAME = os.environ["USERNAME"]
+    PASSWORD = os.environ["PASSWORD"]
+except KeyError:
+    logger.info("Environment variables not set!")
+    #raise
 
 checkpoint = "HuggingFaceTB/SmolLM2-360M-Instruct"
 
@@ -83,6 +91,7 @@ assistant_response = response[start_idx:end_idx]
 
 print(assistant_response)
 logger.info(assistant_response)
+sendMessage(USERNAME, PASSWORD, "Prompt", assistant_response)
 
 # print(tokenizer.decode(outputs[0]))
 # logger.info(f'{tokenizer.decode(outputs[0])}')

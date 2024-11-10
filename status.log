@@ -150,3 +150,12 @@ The salinity level is 1.2, so the gate should be closed. The rule states that th
 2024-11-10 03:24:57,227 - __main__ - INFO - MAE: 0.608, MSE: 1.150, R^2: 0.832
 2024-11-10 03:25:31,536 - __main__ - INFO - 
 The salinity level is 1.2, so the gate should be closed. The rule states that the water is saline when the salinity level is above 1, and the gate should be open when the salinity level is below 1.
+2024-11-10 21:08:33,374 - __main__ - INFO - Environment variables not set!
+2024-11-10 21:08:34,257 - __main__ - INFO - The next EC value is: [-0.01776118]
+2024-11-10 21:09:17,133 - __main__ - INFO - Environment variables not set!
+2024-11-10 21:09:17,587 - __main__ - INFO - The next EC value is: [-0.01776118]
+2024-11-10 21:11:32,911 - __main__ - INFO - Environment variables not set!
+2024-11-10 21:11:33,482 - __main__ - INFO - The next EC value is: [-0.01776118]
+2024-11-10 21:11:33,816 - __main__ - INFO - MAE: 0.608, MSE: 1.150, R^2: 0.832
+2024-11-10 21:15:52,026 - __main__ - INFO - 
+The salinity level is 1.2. Since it's above 1, the water is saline, so close the gate.
