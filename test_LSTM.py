@@ -50,8 +50,8 @@ np.random.seed(42)
 keras.utils.set_random_seed(812)
 
 try:
-    USERNAME_DATAHUB = os.environ["USERNAME"]
-    PASSWORD_DATAHUB = os.environ["PASSWORD"]
+    USERNAME_DATAHUB = os.environ["USERNAME_DATAHUB"]
+    PASSWORD_DATAHUB = os.environ["PASSWORD_DATAHUB"]
 except KeyError:
     logger.info("Environment variables not set!")
     #raise
