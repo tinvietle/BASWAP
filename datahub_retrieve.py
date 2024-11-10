@@ -44,6 +44,7 @@ params = {
 try:
     USERNAME_LOGIN = os.environ["USERNAME"]
     PASSWORD_LOGIN = os.environ["PASSWORD"]
+    print(USERNAME_LOGIN)
 except KeyError:
     logger.info("Environment variables not set!")
     #raise
