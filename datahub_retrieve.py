@@ -41,8 +41,15 @@ params = {
     "count": 2000
 }
 
+try:
+    USERNAME_LOGIN = os.environ["USERNAME"]
+    PASSWORD_LOGIN = os.environ["PASSWORD"]
+except KeyError:
+    logger.info("Environment variables not set!")
+    #raise
+
 header = {'Content-Type': 'application/json'}
-body = json.dumps({"username": "10422050@student.vgu.edu.vn", "password": "VGUrangers2024@"})
+body = json.dumps({"username": str(USERNAME_LOGIN), "password": str(PASSWORD_LOGIN)})
 r = requests.post("https://portal-sso-ensaas.education.wise-paas.com/v4.0/auth/native", headers=header, data=body)
 
 # Get the token

@@ -50,8 +50,8 @@ np.random.seed(42)
 keras.utils.set_random_seed(812)
 
 try:
-    USERNAME = os.environ["USERNAME"]
-    PASSWORD = os.environ["PASSWORD"]
+    USERNAME_DATAHUB = os.environ["USERNAME"]
+    PASSWORD_DATAHUB = os.environ["PASSWORD"]
 except KeyError:
     logger.info("Environment variables not set!")
     #raise
@@ -166,7 +166,7 @@ y_pred = y_pred.reshape((len(y_pred), day_ahead))
 inv_y_pred, inv_y_gt = invert_scaling(y_pred, test_y)
 print("The next EC value is: ", inv_y_pred[-1:, 0])
 logger.info(f'The next EC value is: {inv_y_pred[-1:, 0]}')
-sendMessage(USERNAME, PASSWORD, "Predicted_EC_Value", inv_y_pred[-1:, 0][0])
+sendMessage(USERNAME_DATAHUB, PASSWORD_DATAHUB, "Predicted_EC_Value", inv_y_pred[-1:, 0][0])
 
 # Set up a 3x3 grid of subplots
 fig, axes = plt.subplots(3, 3, figsize=(12, 8))

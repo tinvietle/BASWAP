@@ -23,8 +23,8 @@ logger_file_handler.setFormatter(formatter)
 logger.addHandler(logger_file_handler)
 
 try:
-    USERNAME = os.environ["USERNAME"]
-    PASSWORD = os.environ["PASSWORD"]
+    USERNAME_DATAHUB = os.environ["USERNAME"]
+    PASSWORD_DATAHUB = os.environ["PASSWORD"]
 except KeyError:
     logger.info("Environment variables not set!")
     #raise
@@ -91,7 +91,7 @@ assistant_response = response[start_idx:end_idx]
 
 print(assistant_response)
 logger.info(assistant_response)
-sendMessage(USERNAME, PASSWORD, "Prompt", assistant_response)
+sendMessage(USERNAME_DATAHUB, PASSWORD_DATAHUB, "Prompt", assistant_response)
 
 # print(tokenizer.decode(outputs[0]))
 # logger.info(f'{tokenizer.decode(outputs[0])}')
