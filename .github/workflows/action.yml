@@ -28,7 +28,11 @@ jobs:
           
       - name: execute py script # run main.py
         env:
-          SOME_SECRET: ${{ secrets.SOME_SECRET }}
+          USERNAME_LOGIN: ${{ secrets.USERNAME_LOGIN }}
+          PASSWORD_LOGIN: ${{ secrets.PASSWORD_LOGIN }}
+          USERNAME_DATAHUB: ${{ secrets.USERNAME_DATAHUB }}
+          PASSWORD_DATAHUB: ${{ secrets.PASSWORD_DATAHUB }}
+
         run: |
           python datahub_retrieve.py
           python thinkspeak_retrieve.py
