@@ -164,9 +164,9 @@ test_X = test_X.reshape((test_X.shape[0], test_X.shape[1]))
 test_y = test_y.reshape((len(test_y), day_ahead))
 y_pred = y_pred.reshape((len(y_pred), day_ahead))
 inv_y_pred, inv_y_gt = invert_scaling(y_pred, test_y)
-print("The next EC value is: ", inv_y_pred[-1:, 0])
-logger.info(f'The next EC value is: {inv_y_pred[-1:, 0]}')
-sendMessage(USERNAME_DATAHUB, PASSWORD_DATAHUB, "Predicted_EC_Value", inv_y_pred[-1:, 0][0])
+print("The next EC value is: ", round(inv_y_pred[0, 0]))
+logger.info(f'The next EC value is: {round(inv_y_pred[0, 0])}')
+sendMessage(USERNAME_DATAHUB, PASSWORD_DATAHUB, "Predicted_EC_Value", round(inv_y_pred[0, 0]))
 
 # Set up a 3x3 grid of subplots
 fig, axes = plt.subplots(3, 3, figsize=(12, 8))

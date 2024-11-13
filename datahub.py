@@ -4,8 +4,6 @@ import json
 def sendMessage(username, password, tagName, value):
     hostname = "rabbitmq-pub.education.wise-paas.com" 
     port = 1883  
-    username = "7LeD0ox8MZeY:2VQ66jwX6nQZ" 
-    password = "nBoyDSRbbRsyX2S2yQbt"
     publish_topic = "/wisepaas/scada/14b290c2-d759-4247-ae6e-d55e64656aba/data" 
     payload = {"d": {"Device1": {tagName: str(value)}}}
 
