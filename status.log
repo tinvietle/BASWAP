@@ -278,3 +278,11 @@ The salinity level is 341, so the gate should be closed. The rule states that th
 The salinity level is 341, so the gate should be closed. The rule states that the water is saline, so the gate should be closed.
 2024-11-14 05:09:26,150 - __main__ - INFO - 
 The salinity level is 341, so the gate should be closed. The rule states that the water is saline, so the gate should be closed.
+2024-11-14 05:15:55,280 - __main__ - INFO - Successfully retrieved access token.
+2024-11-14 05:15:56,407 - __main__ - INFO - Data successfully retrieved from API.
+2024-11-14 05:15:56,453 - __main__ - INFO - Data of datahub successfully written to EC_DataHub/2024-11-13.csv
+2024-11-14 05:15:57,413 - __main__ - INFO - Data of thinkspeak successfully saved to EC/2024-11-13.csv
+2024-11-14 05:16:02,982 - __main__ - INFO - The next EC value is: 8
+2024-11-14 05:16:03,286 - __main__ - INFO - MAE: 0.608, MSE: 1.150, R^2: 0.832
+2024-11-14 05:16:32,914 - __main__ - INFO - 
+The salinity level is 341, so the gate should be closed. The rule states that the water is saline, so the gate should be closed.
