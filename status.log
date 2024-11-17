@@ -302,3 +302,11 @@ The salinity level is 212, so the gate should be closed. The rule states that th
 2024-11-16 03:33:05,395 - __main__ - INFO - MAE: 0.608, MSE: 1.150, R^2: 0.832
 2024-11-16 03:33:42,021 - __main__ - INFO - 
 The salinity level is 43, so the gate should be closed. The rule states that the water is saline when the salinity level is above 300, and the water is suitable when the salinity level is below 300. Since the salinity level is 43, it is above 300, so the gate should be closed.
+2024-11-17 03:36:11,595 - __main__ - INFO - Successfully retrieved access token.
+2024-11-17 03:36:12,518 - __main__ - INFO - Data successfully retrieved from API.
+2024-11-17 03:36:12,555 - __main__ - INFO - Data of datahub successfully written to EC_DataHub/2024-11-16.csv
+2024-11-17 03:36:13,799 - __main__ - INFO - Data of thinkspeak successfully saved to EC/2024-11-16.csv
+2024-11-17 03:36:17,420 - __main__ - INFO - The next EC value is: 8
+2024-11-17 03:36:17,741 - __main__ - INFO - MAE: 0.608, MSE: 1.150, R^2: 0.832
+2024-11-17 03:36:51,801 - __main__ - INFO - 
+The salinity level is 0, so the gate should be closed. The rule states that the gate should be closed when the salinity level is above 300, and it should be opened when the salinity level is below 300. Since the salinity level is 0, it is below the threshold, so the gate should be closed.
